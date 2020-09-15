@@ -2,9 +2,11 @@ import time
 import tkinter as tk
 import pychromecast
 
+# pyinstaller --add-data "logos/*.png;logos/" main.py
+
 
 def create_gui(window, media_controller):
-    ert1_logo = tk.PhotoImage(file="ert1.png")  # 382 x 134 is the size of the images for the buttons
+    ert1_logo = tk.PhotoImage(file="logos/ert1.png")  # 382 x 134 is the size of the images for the buttons
     button = tk.Button(master=window, image=ert1_logo, command=lambda: cast_on_button(media_controller))
     button.grid(row=0, column=0, sticky="nsew")
     # button.pack()
