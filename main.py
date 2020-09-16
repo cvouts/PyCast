@@ -32,8 +32,10 @@ def create_gui(window, media_controller, input_list):
 
         button_list.append(tk.Button(master=window,
                                      image=this_logo,
-                                     command=lambda: cast_on_button(media_controller, input_list[i])))
-        
+                                     command=lambda i=i: cast_on_button(media_controller, input_list[i])))
+                                        # i=i here ensures that the current i is passed into input_list each time,
+                                        # instead of the last one
+
         button_list[i].image = this_logo  # without this line only the last image will be loaded
         button_list[i].grid(row=row_number, column=column_number, sticky="nsew")
         column_number += 1
@@ -47,6 +49,12 @@ def cast_on_button(media_controller, input_data):
     time.sleep(5)
     media_controller.play()
     # print("pressed!")
+
+
+def get_list_for_button():
+    input_list = get_addresses()
+
+    return input_list
 
 
 def main():
