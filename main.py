@@ -51,12 +51,6 @@ def cast_on_button(media_controller, input_data):
     # print("pressed!")
 
 
-def get_list_for_button():
-    input_list = get_addresses()
-
-    return input_list
-
-
 def main():
     services, browser = pychromecast.discovery.discover_chromecasts()
     # print(services)
