@@ -1,29 +1,17 @@
 import tkinter as tk
 
 
-def increase():
-    value = int(lbl_value["text"])
-    lbl_value["text"] = f"{value + 1}"
+def cast_on_button(y):
+    print("pressed! the name is", y)
 
 
-def decrease():
-    value = int(lbl_value["text"])
-    lbl_value["text"] = f"{value - 1}"
-
-
-# create a window
 window = tk.Tk()
 
-window.rowconfigure(0, minsize=50, weight=1)
-window.columnconfigure([0, 1, 2], minsize=50, weight=1)
-
-btn_decrease = tk.Button(master=window, text="-", command=decrease)
-btn_decrease.grid(row=0, column=0, sticky="nsew")
-
-lbl_value = tk.Label(master=window, text="0")
-lbl_value.grid(row=0, column=1)
-
-btn_increase = tk.Button(master=window, text="+", command=increase)
-btn_increase.grid(row=0, column=2, sticky="nsew")
-
+ert1_logo = tk.PhotoImage(file="source/ert1.png")
+x = "mitsos"
+button = tk.Button(master=window, image=ert1_logo, command=lambda: cast_on_button(x))
+button.grid(row=0, column=0, sticky="nsew")
+# button.pack()
 window.mainloop()
+
+
