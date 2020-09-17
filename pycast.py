@@ -3,7 +3,7 @@ import tkinter as tk
 import pychromecast
 
 
-# pyinstaller --add-data "logos/*.png;logos/" main.py
+# pyinstaller --add-data "logos/*.png;logos/" pycast.py
 
 
 def get_channels():
@@ -26,6 +26,7 @@ def get_channels():
                              "video/MP2T", "star.png"])
 
     return list_of_channels
+
 
 def create_gui(window, media_controller, input_list, cast):
     button_list = []
@@ -87,13 +88,6 @@ def main():
     address_list = get_channels()
     create_gui(window, media_controller, address_list, chromecast)
 
-    media_controller.block_until_active()
-    print(media_controller.status.player_state)
-
-    print(media_controller.status.player_state)
-    # window.mainloop()
-
-    pychromecast.discovery.stop_discovery(browser)
 
 
 if __name__ == "__main__":
